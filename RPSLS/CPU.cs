@@ -4,7 +4,7 @@ using System.Text;
 
 namespace RPSLS
 {
-    class CPU
+    class CPU : Players
     {
     }
 }
