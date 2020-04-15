@@ -20,18 +20,19 @@ namespace RPSLS
         public void RunGame() // Master method
         {
             DisplayRules();
-            ChooseGameMode();
-
+            ChooseGameMode();            
             player1.ChoseGesture();
             player2.ChoseGesture();
+
+
 
             // 1) Display rules (also include how many rounds!)  [GAME] ✓
             // 2) What are we playing? (HvH or HvC?)             [GAME]  ✓
 
             //// One round of game ////
-            // 3) Display gesture options to the players         [PLAYER]
-            // 4) Player 1 chooses gesture                       [PLAYER]
-            // 5) Player 2 chooses gesture                       [PLAYER]
+            // 3) Display gesture options to the players         [PLAYER]  ✓
+            // 4) Player 1 chooses gesture                       [PLAYER]  ✓
+            // 5) Player 2 chooses gesture                       [PLAYER]   ✓
             // 6) Compare gestures (assign a point to ROUND winner/check for tie!)      [GAME]
             // 7) Display current score                          [GAME]
             // 8) Check for GAME winner (best of 3/5)            [GAME]
@@ -83,6 +84,7 @@ namespace RPSLS
                 // HvC game
                 player2 = new Computer();
                 validInput = true;
+                Console.WriteLine("");
                 Console.WriteLine("You have chosen Human vs CPU");
             }
             else if (userInput == "2")
@@ -90,10 +92,12 @@ namespace RPSLS
                 // HvH game
                 player2 = new Human();
                 validInput = true;
+                Console.WriteLine("");
                 Console.WriteLine("You have chosen Human vs Human");
             }
             else
             {
+                Console.WriteLine("");
                 Console.WriteLine("Invalid user input. Please Try again.");
                 validInput = false;
             }
@@ -101,22 +105,105 @@ namespace RPSLS
             {
                 ChooseGameMode();
             }
+            Console.WriteLine("");
+       }        
+        public void CompareGestures()
+        {
+            string player2Input;
+            string player1Input;
+            player2Input = player2.chosenGesture;
+            player1Input = player1.chosenGesture;
 
-       }
-        public void DisplayGestures()
-        {            
-            List<string> gesture = new List<string>();
-            gesture.Add("Rock");
-            gesture.Add("Paper");
-            gesture.Add("Sissors");
-            gesture.Add("Lizard");
-            gesture.Add("Spock");
-                       
-            foreach (string g in gesture)
+           switch (player2.chosenGesture)
             {
-                Console.WriteLine(g);
+                case "Rock":
+                    player2Input = "Rock";
+                    Console.WriteLine("Computer chose Rock!");
+                    if (player1Input == "Rock")
+                    {
+                        Console.WriteLine("It's a draw!"); 
+                    }
+                    else if (player1Input == "Spock")
+                    {
+                        Console.WriteLine("Spock vaporizes Rock");
+                        player1.score++;
+                    }
+                    else if (player1Input == "Paper")
+                    {
+                        Console.WriteLine("Paper covers Rock");
+                        player1.score++;
+                    }
+                    else if (player1Input == "Sissors")
+                    {
+                        Console.WriteLine("Scissors cuts Paper");
+                        player2.score++;
+                    }
+                    else if (player1Input == "Lizard")
+                    {
+                        Console.WriteLine("Rock crushes Lizard");
+                        player2.score++;
+                    }
+                    break;
+                case "Paper":
+                    player2Input = "Paper";
+                    Console.WriteLine("Computer chose Paper!");
+                    if (player1Input == "Paper")
+                    {
+                        Console.WriteLine("It's a draw!");
+                    }
+                    else if (player1Input == "Spock")
+                    {
+                        Console.WriteLine("Paper disproves Spock");
+                        player2.score++;
+                    }
+                    else if (player1Input == "Rock")
+                    {
+                        Console.WriteLine("Paper covers Rock");
+                        player2.score++;
+                    }
+                    else if (player1Input == "Sissors")
+                    {
+                        Console.WriteLine("Scissors cuts Paper");
+                        player1.score++;
+                    }
+                    else if (player1Input == "Lizard")
+                    {
+                        Console.WriteLine("Lizard eats Paper");
+                        player1.score++;
+                    }
+                    break;
+                case "Sissors":
+                    player2Input = "Sissors";
+                    Console.WriteLine("Player 2 chose Paper!");
+                    if (player1Input == "Paper")
+                    {
+                        Console.WriteLine("It's a draw!");
+                    }
+                    else if (player1Input == "Spock")
+                    {
+                        Console.WriteLine("Paper disproves Spock");
+                        player2.score++;
+                    }
+                    else if (player1Input == "Rock")
+                    {
+                        Console.WriteLine("Paper covers Rock");
+                        player2.score++;
+                    }
+                    else if (player1Input == "Sissors")
+                    {
+                        Console.WriteLine("Scissors cuts Paper");
+                        player1.score++;
+                    }
+                    else if (player1Input == "Lizard")
+                    {
+                        Console.WriteLine("Lizard eats Paper");
+                        player1.score++;
+                    }
+
+                    break;
             }
-            Console.ReadLine();
+            
+            
         }
 
     }
