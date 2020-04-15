@@ -8,7 +8,7 @@ namespace RPSLS
     {
         // Member variables (HAS A)
         public int score;
-        public string coosenGesture;
+        public string chosenGesture;
 
         // Constructor (SPAWNER)        
         public Player()
@@ -16,7 +16,7 @@ namespace RPSLS
             
         }
         // member methods (CAN DO)
-        public abstract void ChooseGesture();              
+        public abstract void ChoseGesture();              
               
                
             
