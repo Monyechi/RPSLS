@@ -4,15 +4,15 @@ using System.Text;
 
 namespace RPSLS
 {
-    class Human : Player
+    class Computer : Player
     {
-        public Human()
+        public Computer()
         {
 
         }
         public override void ChooseGesture()
         {
-            
+
         }
     }
 }

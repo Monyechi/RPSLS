@@ -1,0 +1,13 @@
+C:\Users\Mikey\OneDrive\Desktop\devCodeCamp\Week 2\Projects\RPSLS\RPSLS\RPSLS\bin\Debug\netcoreapp3.1\RPSLS.exe
+C:\Users\Mikey\OneDrive\Desktop\devCodeCamp\Week 2\Projects\RPSLS\RPSLS\RPSLS\bin\Debug\netcoreapp3.1\RPSLS.deps.json
+C:\Users\Mikey\OneDrive\Desktop\devCodeCamp\Week 2\Projects\RPSLS\RPSLS\RPSLS\bin\Debug\netcoreapp3.1\RPSLS.runtimeconfig.json
+C:\Users\Mikey\OneDrive\Desktop\devCodeCamp\Week 2\Projects\RPSLS\RPSLS\RPSLS\bin\Debug\netcoreapp3.1\RPSLS.runtimeconfig.dev.json
+C:\Users\Mikey\OneDrive\Desktop\devCodeCamp\Week 2\Projects\RPSLS\RPSLS\RPSLS\bin\Debug\netcoreapp3.1\RPSLS.dll
+C:\Users\Mikey\OneDrive\Desktop\devCodeCamp\Week 2\Projects\RPSLS\RPSLS\RPSLS\bin\Debug\netcoreapp3.1\RPSLS.pdb
+C:\Users\Mikey\OneDrive\Desktop\devCodeCamp\Week 2\Projects\RPSLS\RPSLS\RPSLS\obj\Debug\netcoreapp3.1\RPSLS.csprojAssemblyReference.cache
+C:\Users\Mikey\OneDrive\Desktop\devCodeCamp\Week 2\Projects\RPSLS\RPSLS\RPSLS\obj\Debug\netcoreapp3.1\RPSLS.csproj.CoreCompileInputs.cache
+C:\Users\Mikey\OneDrive\Desktop\devCodeCamp\Week 2\Projects\RPSLS\RPSLS\RPSLS\obj\Debug\netcoreapp3.1\RPSLS.AssemblyInfoInputs.cache
+C:\Users\Mikey\OneDrive\Desktop\devCodeCamp\Week 2\Projects\RPSLS\RPSLS\RPSLS\obj\Debug\netcoreapp3.1\RPSLS.AssemblyInfo.cs
+C:\Users\Mikey\OneDrive\Desktop\devCodeCamp\Week 2\Projects\RPSLS\RPSLS\RPSLS\obj\Debug\netcoreapp3.1\RPSLS.dll
+C:\Users\Mikey\OneDrive\Desktop\devCodeCamp\Week 2\Projects\RPSLS\RPSLS\RPSLS\obj\Debug\netcoreapp3.1\RPSLS.pdb
+C:\Users\Mikey\OneDrive\Desktop\devCodeCamp\Week 2\Projects\RPSLS\RPSLS\RPSLS\obj\Debug\netcoreapp3.1\RPSLS.genruntimeconfig.cache
