@@ -24,6 +24,7 @@ namespace RPSLS
             player1.ChoseGesture();
             player2.ChoseGesture();
             CompareGestures();
+            DisplayRoundWinner();
             IsGameOver();
 
             // 1) Display rules (also include how many rounds!)  [GAME] ✓
@@ -68,6 +69,7 @@ namespace RPSLS
             }
             Console.WriteLine("*************************");
             Console.WriteLine("");
+            Console.Clear();
 
 
         }
@@ -114,6 +116,8 @@ namespace RPSLS
             string player1Input;
             player2Input = player2.chosenGesture;
             player1Input = player1.chosenGesture;
+            player1.roundScore = 0;
+            player2.roundScore = 0;
 
            
             switch (player2.chosenGesture)
@@ -128,35 +132,23 @@ namespace RPSLS
                     else if (player1Input == "Spock")
                     {
                         Console.WriteLine("Spock vaporizes Rock");
-                        player1.score++;
+                        player1.roundScore++;
                     }
                     else if (player1Input == "Paper")
                     {
                         Console.WriteLine("Paper covers Rock");
-                        player1.score++;
+                        player1.roundScore++;
                     }
                     else if (player1Input == "Sissors")
                     {
-                        Console.WriteLine("Scissors cuts Paper");
-                        player2.score++;
+                        Console.WriteLine("Rock crushes Sissors");
+                        player2.roundScore++;
                     }
                     else if (player1Input == "Lizard")
                     {
                         Console.WriteLine("Rock crushes Lizard");
-                        player2.score++;
-                    }
-                    while (player1.score < 1)
-                    {
-                        CompareGestures();
-                    }
-                    if (player1.score == 3)
-                    {
-                        Console.WriteLine(player1.name + " won the game!!!");
-                    }
-                    else if (player2.score == 3)
-                    {
-                        Console.WriteLine(player2.name + " won the game!!!");
-                    }
+                        player2.roundScore++;
+                    }                    
                     break;
                 case "Paper":
                     player2Input = "Paper";
@@ -168,22 +160,22 @@ namespace RPSLS
                     else if (player1Input == "Spock")
                     {
                         Console.WriteLine("Paper disproves Spock");
-                        player2.score++;
+                        player2.roundScore++;
                     }
                     else if (player1Input == "Rock")
                     {
                         Console.WriteLine("Paper covers Rock");
-                        player2.score++;
+                        player2.roundScore++;
                     }
                     else if (player1Input == "Sissors")
                     {
                         Console.WriteLine("Scissors cuts Paper");
-                        player1.score++;
+                        player1.roundScore++;
                     }
                     else if (player1Input == "Lizard")
                     {
                         Console.WriteLine("Lizard eats Paper");
-                        player1.score++;
+                        player1.roundScore++;
                     }
                     break;
                 case "Sissors":
@@ -196,22 +188,22 @@ namespace RPSLS
                     else if (player1Input == "Spock")
                     {
                         Console.WriteLine("Spock smashes Scissors");
-                        player1.score++;
+                        player1.roundScore++;
                     }
                     else if (player1Input == "Rock")
                     {
                         Console.WriteLine("Rock crushes Scissors");
-                        player1.score++;
+                        player1.roundScore++;
                     }
                     else if (player1Input == "Paper")
                     {
                         Console.WriteLine("Scissors cuts Paper");
-                        player2.score++;
+                        player2.roundScore++;
                     }
                     else if (player1Input == "Lizard")
                     {
                         Console.WriteLine("Scissors decapitates Lizard");
-                        player2.score++;
+                        player2.roundScore++;
                     }
                     break;
                 case "Lizard":
@@ -224,22 +216,22 @@ namespace RPSLS
                     else if (player1Input == "Spock")
                     {
                         Console.WriteLine("Lizard poisons Spock");
-                        player2.score++;
+                        player2.roundScore++;
                     }
                     else if (player1Input == "Rock")
                     {
                         Console.WriteLine("Rock crushes Lizard");
-                        player1.score++;
+                        player1.roundScore++;
                     }
                     else if (player1Input == "Paper")
                     {
                         Console.WriteLine("Lizard eats Paper");
-                        player2.score++;
+                        player2.roundScore++;
                     }
                     else if (player1Input == "Sissors")
                     {
                         Console.WriteLine("Scissors decapitates Lizard");
-                        player1.score++;
+                        player1.roundScore++;
                     }
                     break;
                 case "Spock":
@@ -252,44 +244,55 @@ namespace RPSLS
                     else if (player1Input == "Lizard")
                     {
                         Console.WriteLine("Lizard poisons Spock");
-                        player1.score++;
+                        player1.roundScore++;
                     }
                     else if (player1Input == "Rock")
                     {
                         Console.WriteLine("Spock vaporizes Rock");
-                        player2.score++;
+                        player2.roundScore++;
                     }
                     else if (player1Input == "Paper")
                     {
                         Console.WriteLine("Paper disproves Spock");
-                        player1.score++;
+                        player1.roundScore++;
                     }
                     else if (player1Input == "Sissors")
                     {
-                        Console.WriteLine("Spock smashes Scissors");
-                        player2.score++;
+                        Console.WriteLine("Spock smashes Scissors");                        
+                        player2.roundScore++;
                     }                    
                     break;                    
             }
              
-            if (player1.score > player2.score)
+                    
+
+        }
+        public void DisplayRoundWinner()
+        {
+            if (player1.roundScore > player2.roundScore)
             {
+                player1.score++;
                 Console.WriteLine(player1.name + " Won this round!");
                 Console.WriteLine("");
                 Console.WriteLine(player1.name + ", your current score is " + player1.score);
                 Console.WriteLine(player2.name + ", your current score is " + player2.score);
+                
             }
-            else if (player2.score > player1.score)
+            else if (player2.roundScore > player1.roundScore)
             {
+                player2.score++;
                 Console.WriteLine(player2.name + " Won this round!");
                 Console.WriteLine("");
                 Console.WriteLine(player1.name + ", your current score is " + player1.score);
                 Console.WriteLine(player2.name + ", your current score is " + player2.score);
+                
             }
-            else
+            else if (player2.roundScore == player1.roundScore)
             {
-
-            }         
+                Console.WriteLine("");
+                Console.WriteLine(player1.name + ", your current score is " + player1.score);
+                Console.WriteLine(player2.name + ", your current score is " + player2.score);
+            }
 
         }
        
@@ -297,22 +300,24 @@ namespace RPSLS
         {
                pointsNeededToWin = 3;
                 
-            if ((player1.score != pointsNeededToWin || player2.score != pointsNeededToWin))
+            if (player1.score == pointsNeededToWin)
+            {
+                Console.WriteLine(player1.name + " has won the game!");
+            }
+            else if (player2.score == pointsNeededToWin)
+            {
+                Console.WriteLine(player2.name + " has won the game!");
+            }
+            else
             {
                 player1.ChoseGesture();
                 player2.ChoseGesture();
                 CompareGestures();
+                DisplayRoundWinner();
                 IsGameOver();
             }
-            if (player1.score == pointsNeededToWin)
-            {
-                Console.WriteLine(player1.name + " won the game");
-            }
-            else if (player1.score == pointsNeededToWin)
-            {
-                Console.WriteLine(player2.name + " won the game");
-            }
-
+                            
+            
 
         }
 

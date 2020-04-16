@@ -20,6 +20,7 @@ namespace RPSLS
         {
             Console.WriteLine("Please enter your name:");
             name = Console.ReadLine();
+            Console.Clear();
         }
 public void ChosenGesture()
         {

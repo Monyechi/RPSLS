@@ -8,6 +8,7 @@ namespace RPSLS
     {
         // Member variables (HAS A)
         public int score;
+        public int roundScore;
         public string chosenGesture;
         public List<string> gestures;
         public string name;
