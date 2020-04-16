@@ -57,7 +57,7 @@ public void ChosenGesture()
             {
                 chosenGesture = "Spock";
             }
-            Console.WriteLine("You have chosen " + chosenGesture);
+            Console.WriteLine(name + ", you have chosen " + chosenGesture);
 
         }
         

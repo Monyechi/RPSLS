@@ -12,7 +12,7 @@ namespace RPSLS
         }
          public int RandomNumber(Random random)
         {
-            int numberGenerated = random.Next(1, 6);
+            int numberGenerated = random.Next(1, 5);
             return numberGenerated;
         }
         public override void ChoseGesture()
@@ -45,7 +45,7 @@ namespace RPSLS
             {
                 chosenGesture = "Spock";
             }
-            Console.WriteLine("Computer has chosen " + chosenGesture);
+            
 
 
 
