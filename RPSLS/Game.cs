@@ -275,12 +275,14 @@ namespace RPSLS
             if (player1.score > player2.score)
             {
                 Console.WriteLine(player1.name + " Won this round!");
+                Console.WriteLine("");
                 Console.WriteLine(player1.name + ", your current score is " + player1.score);
                 Console.WriteLine(player2.name + ", your current score is " + player2.score);
             }
             else if (player2.score > player1.score)
             {
                 Console.WriteLine(player2.name + " Won this round!");
+                Console.WriteLine("");
                 Console.WriteLine(player1.name + ", your current score is " + player1.score);
                 Console.WriteLine(player2.name + ", your current score is " + player2.score);
             }
@@ -290,29 +292,17 @@ namespace RPSLS
             }         
 
         }
-        //public void PlayAnotherRound()
-        //{
-        //    if (false)
-        //    {
-        //        player1.ChoseGesture();
-        //        player2.ChoseGesture();
-
-        //    }
-        //    else if 
-        //    {
-                
-        //    }
-
-        //}
-
-        //  Checks to see if winner conditions have been met
+       
         public void IsGameOver()
         {
-            while ((player1.score != pointsNeededToWin || player2.score != pointsNeededToWin))
+               pointsNeededToWin = 3;
+                
+            if ((player1.score != pointsNeededToWin || player2.score != pointsNeededToWin))
             {
                 player1.ChoseGesture();
                 player2.ChoseGesture();
                 CompareGestures();
+                IsGameOver();
             }
             if (player1.score == pointsNeededToWin)
             {
