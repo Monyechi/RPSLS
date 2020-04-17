@@ -20,12 +20,15 @@ namespace RPSLS
         public void RunGame() // Master method
         {
             DisplayRules();
-            ChooseGameMode();            
-            player1.ChoseGesture();
-            player2.ChoseGesture();
-            CompareGestures();
-            DisplayRoundWinner();
-            IsGameOver();
+            ChooseGameMode();     
+            while(player1.score < pointsNeededToWin && player2.score < pointsNeededToWin)
+            {
+                player1.ChoseGesture();
+                player2.ChoseGesture();
+                CompareGestures();
+                DisplayRoundWinner();
+            }
+            DisplayGameWinner();
 
             // 1) Display rules (also include how many rounds!)  [GAME] ✓
             // 2) What are we playing? (HvH or HvC?)             [GAME]  ✓
@@ -69,6 +72,8 @@ namespace RPSLS
             }
             Console.WriteLine("*************************");
             Console.WriteLine("");
+            Console.WriteLine("Press Enter To Continue"); 
+            Console.ReadLine();
             Console.Clear();
 
 
@@ -77,8 +82,10 @@ namespace RPSLS
        
         public void ChooseGameMode()
        {
-            Console.WriteLine("Please enter 1 for HvC, or 2 for HvH:");
+            Console.WriteLine("Please Enter 1 For HvC, Or 2 For HvH:");            
+            Console.WriteLine("");
             
+
             string userInput = Console.ReadLine();
             bool validInput;
 
@@ -88,7 +95,8 @@ namespace RPSLS
                 player2 = new Computer();
                 validInput = true;
                 Console.WriteLine("");
-                Console.WriteLine("You have chosen Human vs CPU");
+                Console.WriteLine("You Have Chosen Human vs CPU");
+                Console.WriteLine("");
             }
             else if (userInput == "2")
             {
@@ -96,12 +104,14 @@ namespace RPSLS
                 player2 = new Human();
                 validInput = true;
                 Console.WriteLine("");
-                Console.WriteLine("You have chosen Human vs Human");
+                Console.WriteLine("You Have Chosen Human vs Human");
+                Console.WriteLine("");
             }
             else
             {
                 Console.WriteLine("");
                 Console.WriteLine("Invalid user input. Please Try again.");
+                Console.WriteLine("");
                 validInput = false;
             }
             if (validInput == false)
@@ -109,9 +119,13 @@ namespace RPSLS
                 ChooseGameMode();
             }
             Console.WriteLine("");
-       }        
+            
+            Console.WriteLine("Press Enter ");
+            
+        }        
         public void CompareGestures()
         {
+            
             string player2Input;
             string player1Input;
             player2Input = player2.chosenGesture;
@@ -276,6 +290,7 @@ namespace RPSLS
                 Console.WriteLine("");
                 Console.WriteLine(player1.name + ", your current score is " + player1.score);
                 Console.WriteLine(player2.name + ", your current score is " + player2.score);
+                Console.WriteLine("");
                 
             }
             else if (player2.roundScore > player1.roundScore)
@@ -285,20 +300,21 @@ namespace RPSLS
                 Console.WriteLine("");
                 Console.WriteLine(player1.name + ", your current score is " + player1.score);
                 Console.WriteLine(player2.name + ", your current score is " + player2.score);
-                
+                Console.WriteLine("");
             }
             else if (player2.roundScore == player1.roundScore)
             {
                 Console.WriteLine("");
                 Console.WriteLine(player1.name + ", your current score is " + player1.score);
                 Console.WriteLine(player2.name + ", your current score is " + player2.score);
+                Console.WriteLine("");
             }
 
         }
        
-        public void IsGameOver()
+        public void DisplayGameWinner()
         {
-               pointsNeededToWin = 3;
+            //pointsNeededToWin = 3;
                 
             if (player1.score == pointsNeededToWin)
             {
@@ -308,14 +324,14 @@ namespace RPSLS
             {
                 Console.WriteLine(player2.name + " has won the game!");
             }
-            else
-            {
-                player1.ChoseGesture();
-                player2.ChoseGesture();
-                CompareGestures();
-                DisplayRoundWinner();
-                IsGameOver();
-            }
+            //else
+            //{
+            //    player1.ChoseGesture();
+            //    player2.ChoseGesture();
+            //    CompareGestures();
+            //    DisplayRoundWinner();
+            //    IsGameOver();
+            //}
                             
             
 

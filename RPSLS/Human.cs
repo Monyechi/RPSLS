@@ -26,10 +26,9 @@ public void ChosenGesture()
         {
 
             string userInput;
-
+            
             Console.WriteLine(name + " choose your gesture");
-            // Mike choose your gesture
-
+                       
 
             for (int i = 0; i < gestures.Count; i++)
             {
@@ -42,23 +41,30 @@ public void ChosenGesture()
             {
                 chosenGesture = "Rock";
             }
-            if (userInput == "2")
+            else if (userInput == "2")
             {
                 chosenGesture = "Paper";
             }
-            if (userInput == "3")
+            else if(userInput == "3")
             {
                 chosenGesture = "Sissors";
             }
-            if (userInput == "4")
+            else if (userInput == "4")
             {
                 chosenGesture = "Lizard";
             }
-            if (userInput == "5")
+            else if (userInput == "5")
             {
                 chosenGesture = "Spock";
             }
+            else
+            {
+                Console.WriteLine("Invalid Entry! Please Try Again.");
+                ChosenGesture();
+            }
             Console.WriteLine(name + ", you have chosen " + chosenGesture);
+            
+            
 
         }
         
