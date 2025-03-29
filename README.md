@@ -1,6 +1,3 @@
----
-
-```markdown
 # 🖐 RPSLS (Rock, Paper, Scissors, Lizard, Spock)
 
 A console-based C# implementation of the extended classic game, **Rock, Paper, Scissors, Lizard, Spock**, made popular by *The Big Bang Theory*. This game introduces more complexity and reduces ties compared to the traditional version by including two additional gestures—Lizard and Spock.
